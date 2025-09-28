@@ -1,0 +1,11 @@
+[package]
+name = "eezby/easyengine"
+version = "0.0.9"
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+exclude = ["aftman.toml", "selene.toml", "stylua.toml", "src", "default.project.json"]
+
+[dependencies]
+Signal = "stravant/goodsignal@0.1.1"
+Promise = "evaera/promise@4.0.0"
