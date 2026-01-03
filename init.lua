@@ -154,7 +154,7 @@ function EasyEngine._RunLifecycleFunction(lifecycleFunction: LifecycleFunction.L
             continue
         end
 
-        if not lifecycleFunction.async then
+        if not lifecycleFunction.isAsync then
             local promise = Promise.new(function(resolve: () -> nil)
                 requiredModule[lifecycleFunction.name]()
                 resolve()
@@ -172,7 +172,7 @@ function EasyEngine._RunLifecycleFunction(lifecycleFunction: LifecycleFunction.L
         end
     end
 
-    if not lifecycleFunction.async then
+    if not lifecycleFunction.isAsync then
         Promise.allSettled(lifecyclePromises):await()
     end
 
